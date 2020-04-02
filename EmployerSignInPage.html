@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
-<title>Jobs all over the Middle-Earth</title>
+<title>EYE Employer Sign In Page</title>
 </head>
 <body>
 
@@ -13,10 +13,10 @@
 </div>
 <div class="col-12 menu" >
  <div class="dropdown">
-  <button class="dropbtn">For Employer</button>
+  <button class="dropbtn active">For Employer</button>
   <div class="dropdown-content">
   <a class="ddlink" href="EmployerRegisterPage.html">Register</a>
-  <a class="ddlink" href="EmployerSignInPage.html">Sing in</a>
+  <a class="ddlink active" href="EmployerSignInPage.html">Sing in</a>
   <a class="ddlink" href="EmployerPersonalPage.html">Employer Page</a>
   </div>
 </div>
@@ -33,38 +33,28 @@
 </div>
 <div class="content">
  
-  <div class="col-4">
-    <h1 class="textheadline">If you seek for job. </h1>
-    <h2>We provide:</h2>
-    <ul>
-        <li>Stable workflow</li>
-        <li>Reliable employer</li>
-        <li>Unlimited cookies</li>
-    </ul>
-    <a class="inTextUrl" href="UnderConstruction.html">Join as job seeker</a>
+  <div class="col-8">
+    <h1>Welcome back, it is always a pleasure to meet you again.</h1>
+    <h1>Please, sign using your email or login and password.</h1>
+    <form action="#">
+        <label class="fillLabel" for="signInLogin">Login/Email:</label><br>
+        <input class="fillform" type="text" id="signInLogin" name="signInLogin" ><br>
+        <label class="fillLabel" for="signInPassword">Password:</label><br>
+        <input class="fillform" type="password" id="signInPassword" name="signInPassword"><br>
+        <input class="fillbutton" type="submit" value="Sing In"><br>
+    </form> 
+   <p>If you troubles with signing in, please: <a class=inTextUrl href="ContactsPage.html">contact us</a> </p>
 
-  </div>
-
-  <div class="col-4">
-    <br>
-    <h1 class="textheadline">You on the right site!</h1>
-    <p> <image src="gates.jpg"</p>
-    <h1 class="textheadline">Our gates are always open for you.</h1>
+<br>
+<br>
   </div>
 
    <div class="col-4">
-    <h1 class="textheadline">If you seek for staff</h1>
-    <h2>We provide:</h2>
-    <ul>
-        <li>Loyal minions</li>
-        <li>Cunning lieutenants</li>
-        <li>Representative reptiles for castle moats</li>
-    </ul>
-    <a class="inTextUrl" href="EmployerSignInPage.html">Join as employer</a>
+   <br>
+    <p> <image src="ElvenTeam.jpg"</p>
   </div>
 </div>
-    <br>
-    <br>
+
 <div class="footer col-12">
     <a class="col-4" href="ContactsPage.html" > Contacts </a>
     <a class="col-4" href="SiteFeedbackPage.html" > Site Feedback </a>
