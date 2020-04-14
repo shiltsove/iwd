@@ -4,6 +4,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
 <title>EYE Employer Register Page</title>
+<script type="text/javascript">
+function onlyText(evt) {
+  var theEvent = evt || window.event;
+
+
+  // Handle key press
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode(key);
+  
+  var regex = /[A-Za-z ]/;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+
+function BackgroundSetColor(obj,color)
+	{
+		document.getElementById(obj).style.backgroundColor = color;
+	}
+
+</script>
 </head>
 <body>
 
@@ -37,23 +59,23 @@
     <h1>Please fill in the fields to register</h1>
     <form action="#">
         <label class="fillLabel" for="login">Login:</label><br>
-        <input class="fillform" type="text" id="login" name="login" ><br>
+        <input class="fillform" type="text" id="login" name="login" onfocus="BackgroundSetColor('login','yellow')" onblur="BackgroundSetColor('login','white')"><br>
         <label class="fillLabel" for="email">Email:</label><br>
-        <input class="fillform" type="email" id="email" name="email"><br>
+        <input class="fillform" type="email" id="email" name="email" onfocus="BackgroundSetColor('email','yellow')" onblur="BackgroundSetColor('email','white')"><br>
         <label class="fillLabel" for="companyName">Company name:</label><br>
-        <input class="fillform" type="text" id="companyName" name="companyName"><br>
+        <input class="fillform" type="text" onkeypress='onlyText(event)'   id="companyName" name="companyName" onpaste="return false;"onfocus="BackgroundSetColor('companyName','yellow')" onblur="BackgroundSetColor('companyName','white')"><br>
         <label class="fillLabel" for="businessArea">Business Area:</label><br>
-        <input class="fillform" type="text" id="businessArea" name="businessArea"><br>
+        <input class="fillform" type="text" id="businessArea" name="businessArea" onfocus="BackgroundSetColor('businessArea','yellow')" onblur="BackgroundSetColor('businessArea','white')"><br>
         <label class="fillLabel" for="businessStatus">Business Status:</label><br>
-        <input class="fillform" type="text" id="businessStatus" name="businessStatus"><br>
+        <input class="fillform" type="text" onkeypress='onlyText(event)' id="businessStatus" name="businessStatus" onpaste="return false; "onfocus="BackgroundSetColor('businessStatus','yellow')" onblur="BackgroundSetColor('businessStatus','white')"><br>
         <label class="fillLabel" for="address">Address:</label><br>
-        <input class="fillform" type="text" id="address" name="address"><br>
+        <input class="fillform" type="text" id="address" name="address" onfocus="BackgroundSetColor('address','yellow')" onblur="BackgroundSetColor('address','white')"> <br>
         <label class="fillLabel" for="phoneNumber">Phone number: (in 123-45-678 format)</label><br>
-        <input class="fillform" type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+        <input class="fillform" type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  onfocus="BackgroundSetColor('phoneNumber','yellow')" onblur="BackgroundSetColor('phoneNumber','white')"><br>
         <label class="fillLabel" for="password">Password:</label><br>
-        <input class="fillform" type="password" id="password" name="password"><br>
+        <input class="fillform" type="password" id="password" name="password"  onfocus="BackgroundSetColor('password','red')" onblur="BackgroundSetColor('password','white')"><br>
         <label class="fillLabel" for="confirmPassword">Confirm Password:</label><br>
-        <input class="fillform" type="password" id="confirmPassword" name="confirmPassword"><br>
+        <input class="fillform" type="password" id="confirmPassword" name="confirmPassword" onfocus="BackgroundSetColor('confirmPassword','red')" onblur="BackgroundSetColor('confirmPassword','white')"><br>
         <label class="fillLabel" for="submit">By continuing, you acknowledge that you accept EYE’s Privacy Policy and Terms & Conditions</label><br>
         <input class="fillbutton" type="submit" value="Register"><br>
     </form> 
