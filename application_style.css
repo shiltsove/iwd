@@ -127,6 +127,9 @@ button.active {
 } 
 .fillform{
     width: 85%;
+	height: 40px;
+	font-size:22px;
+	background-color: #D3D3D3;
 }
 .fillLabel{
     font-size:22px;
@@ -136,6 +139,7 @@ button.active {
     height: 40px;
     background-color: gray;
     color: white;
+	font-size:22px;
 }
 
 .selectform{
