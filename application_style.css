@@ -20,10 +20,17 @@ body {
 p {
     text-indent: 20px; /* Отступ первой строки в пикселах */
 }
+
+.hidden{
+  display: none;
+}
 	
 
 
 
+
+
+/*----------interactive separator-----------------*/
 
 .col-1 {width: 8.33%; float: left;
   padding: 15px;}
@@ -50,6 +57,7 @@ p {
 .col-12 {width: 100%; float: left;
   padding: 15px;}
 
+/*----------interactive separator-----------------*/
 
 
 .header {
@@ -137,21 +145,32 @@ button.active {
 .fillbutton{
     width: 85%;
     height: 40px;
-    background-color: gray;
+    background-color: rgb(97, 97, 97);
     color: white;
 	font-size:22px;
 }
+.fillTextArea{
+  width: 85%;
+  height: 80px;
+  font-size:22px;
+  background-color: #D3D3D3;
+}
+.pairbutton{
+  width: 49%;
+  height: 40px;
+  background-color: rgb(79, 89, 95);
+  color: white;
+font-size:22px;
+}
 
-.selectform{
+.selectform {
     width: 85%;
     height: 40px;
     background-color: black;
     color: white;
 }
 
-a {
- 
-}
+
 
 img {
  max-width:100%;

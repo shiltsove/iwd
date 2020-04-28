@@ -25,6 +25,116 @@ function BackgroundSetColor(obj,color)
 		document.getElementById(obj).style.backgroundColor = color;
 	}
 
+ function InputCheck()
+  {
+    
+    login_value = document.getElementById("login").value;
+    email_value = document.getElementById("email").value;
+    companyName_value = document.getElementById("companyName").value;
+    businessArea_value = document.getElementById("businessArea").value;
+    businessStatus_value = document.getElementById("businessStatus").value;
+    address_value = document.getElementById("address").value;
+    phoneNumber_value = document.getElementById("phoneNumber").value;
+    password_value = document.getElementById("password").value;
+    confirmPassword_value = document.getElementById("confirmPassword").value;
+    
+
+
+    emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]*@[a-zA-Z\d]+\.(my|com|net)$/;
+		phonepattern = /^02 ?[1579]{1}\d{6,7}$/;
+    alphanumeric_six = /^[a-zA-Z\d]{6,}$/
+
+    if (login_value.length == 0)
+    {
+      alert("Please fill Login form");
+      document.getElementById("login").select();
+      return false;
+    } 
+    else if (email_value.length == 0)
+		{
+      alert("Please fill Email form");
+		  document.getElementById("email").select();
+		  return false;
+		}
+    else if (companyName_value.length == 0)
+		{
+      alert("Please fill Company Name form");
+		  document.getElementById("companyName").select();
+		  return false;
+		}
+    else if (businessArea_value.length == 0)
+		{
+      alert("Please fill Business Area form");
+		  document.getElementById("businessArea").select();
+		  return false;
+		}
+    else if (businessStatus_value.length == 0)
+		{
+      alert("Please fill Business Status form");
+		  document.getElementById("businessStatus").select();
+		  return false;
+		}
+    else if (address_value.length == 0)
+		{
+      alert("Please fill Address form");
+		  document.getElementById("address").select();
+		  return false;
+		}
+    else if (phoneNumber_value.length == 0)
+		{
+      alert("Please fill Phone Number form");
+		  document.getElementById("phoneNumber").select();
+		  return false;
+		}
+    else if (password_value.length == 0)
+		{
+      alert("Please fill Password form");
+		  document.getElementById("password").select();
+		  return false;
+		}
+    else if (confirmPassword_value.length == 0)
+		{
+      alert("Please fill confirmPassword form");
+		  document.getElementById("confirmPassword").select();
+		  return false;
+		}
+
+    if (password_value != confirmPassword_value)
+    {
+      alert("Password and confirmation must match each other!");
+      document.getElementById("confirmPassword").select();
+      return false;
+    }
+
+    if ( !phonepattern.test(phoneNumber_value))
+		{
+		alert("Phone is not in right format!");
+		document.getElementById("phoneNumber").select();
+		return false;
+		}
+	  else if ( !emailpattern.test(email_value))
+		{
+		alert("Email is not in right format!");
+		document.getElementById("email").select();
+		return false;
+		}
+    else if ( !alphanumeric_six.test(login_value))
+		{
+		alert("Login must consist of at least 6 alphanumeric characters!");
+		document.getElementById("login").select();
+		return false;
+		}
+    else if ( !alphanumeric_six.test(password_value))
+		{
+		alert("Password must consist of at least 6 alphanumeric characters!");
+		document.getElementById("password").select();
+		return false;
+		}
+
+
+	
+  } 
+
 </script>
 </head>
 <body>
@@ -57,7 +167,7 @@ function BackgroundSetColor(obj,color)
  
   <div class="col-8">
     <h1>Please fill in the fields to register</h1>
-    <form action="#">
+    <form onsubmit = "return InputCheck()">
         <label class="fillLabel" for="login">Login:</label><br>
         <input class="fillform" type="text" id="login" name="login" onfocus="BackgroundSetColor('login','yellow')" onblur="BackgroundSetColor('login','#D3D3D3')"><br>
         <label class="fillLabel" for="email">Email:</label><br>
@@ -70,8 +180,8 @@ function BackgroundSetColor(obj,color)
         <input class="fillform" type="text" onkeypress='onlyText(event)' id="businessStatus" name="businessStatus" onpaste="return false; "onfocus="BackgroundSetColor('businessStatus','yellow')" onblur="BackgroundSetColor('businessStatus','#D3D3D3')"><br>
         <label class="fillLabel" for="address">Address:</label><br>
         <input class="fillform" type="text" id="address" name="address" onfocus="BackgroundSetColor('address','yellow')" onblur="BackgroundSetColor('address','#D3D3D3')"> <br>
-        <label class="fillLabel" for="phoneNumber">Phone number: (in 123-45-678 format)</label><br>
-        <input class="fillform" type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  onfocus="BackgroundSetColor('phoneNumber','yellow')" onblur="BackgroundSetColor('phoneNumber','#D3D3D3')"><br>
+        <label class="fillLabel" for="phoneNumber">Phone number:</label><br>
+        <input class="fillform" type="tel" id="phoneNumber" name="phoneNumber"  onfocus="BackgroundSetColor('phoneNumber','yellow')" onblur="BackgroundSetColor('phoneNumber','#D3D3D3')"><br>
         <label class="fillLabel" for="password">Password:</label><br>
         <input class="fillform" type="password" id="password" name="password"  onfocus="BackgroundSetColor('password','red')" onblur="BackgroundSetColor('password','#D3D3D3')"><br>
         <label class="fillLabel" for="confirmPassword">Confirm Password:</label><br>
@@ -87,7 +197,7 @@ function BackgroundSetColor(obj,color)
 
    <div class="col-4">
     <h1 class="textheadline">Our best employer since the First Era</h1>
-    <p> <image src="Sauron.jpg"</p>
+    <p> <image src="Sauron.jpg"></image></p>
     <h1 class="textheadline">But we believe you can do better</h1>
     <br>
     <br>
