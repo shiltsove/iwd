@@ -46,8 +46,12 @@ function BackgroundSetColor(obj,color)
  
     emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]+@[a-zA-Z\d]+\.(my|com|net)$/;
 		phonepattern = /^02 ?[1579]{1}\d{6,7}$/;
+<<<<<<< HEAD
     alphanumericpattern = /^[a-zA-Z\d]+[a-zA-Z\d ]+$/;
     alphabetpattern = /^[a-zA-Z]+[a-zA-Z ]+$/;
+=======
+    alphabetpattern = /^[a-zA-Z]+[a-zA-Z ]+$/
+>>>>>>> 68f8d313f57eeb1501cb31afc8ec1df63909b10f
     alphanumeric_six = /^[a-zA-Z\d]{6,}$/
 
     if (companyName_value.length == 0)
@@ -93,6 +97,22 @@ function BackgroundSetColor(obj,color)
 		  return false;
 		}
 
+<<<<<<< HEAD
+=======
+    
+    responsibilities_value = document.getElementById("responsibilities").value;
+    requirements_value = document.getElementById("requirements").value;
+    address_value = document.getElementById("address").value;
+    salary_value = document.getElementById("salary").value;
+    contacts_value = document.getElementById("contacts").value;
+ 
+    emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]*@[a-zA-Z\d]+\.(my|com|net)$/;
+		phonepattern = /^02 ?[1579]{1}\d{6,7}$/;
+    alphabetpattern = /^[a-zA-Z]+[a-zA-Z ]+$/
+    alphanumericpattern = /^[a-zA-Z\d]+[a-zA-Z\d ]+$/
+    alphanumeric_six = /^[a-zA-Z\d]{6,}$/
+
+>>>>>>> 68f8d313f57eeb1501cb31afc8ec1df63909b10f
     if ( !alphabetpattern.test(companyName_value))
 		{
       alert("Company Name is not in right format!");
@@ -178,19 +198,33 @@ function BackgroundSetColor(obj,color)
       <h3>Please, fill in the fields to add a position.</h3>
         <form onsubmit = "return InputCheck()">
           <label class="fillLabel" for="companyName">Company name:</label><br>
+<<<<<<< HEAD
           <input class="fillform" type="text" id="companyName" name="companyNamen" onfocus="BackgroundSetColor('companyName','yellow')" onblur="BackgroundSetColor('companyName','#D3D3D3')"><br>
           <label class="fillLabel" for="jobTitle">Job Title:</label><br>
           <input class="fillform" type="text" id="jobTitle" name="jobTitle" onfocus="BackgroundSetColor('jobTitle','yellow')" onblur="BackgroundSetColor('jobTitle','#D3D3D3')"><br>
+=======
+          <input class="fillform" type="text" id="companyName" name="companyNamen" ><br>
+          <label class="fillLabel" for="jobTitle">Job Title:</label><br>
+          <input class="fillform" type="text" id="jobTitle" name="jobTitle" ><br>
+>>>>>>> 68f8d313f57eeb1501cb31afc8ec1df63909b10f
           <label class="fillLabel" for="responsibilities">Responsibilities:</label><br>
           <textarea class=fillTextArea name="responsibilities" id="responsibilities" onfocus="BackgroundSetColor('responsibilities','yellow')" onblur="BackgroundSetColor('responsibilities','#D3D3D3')"></textarea><br>
           <label class="fillLabel" for="requirements">Requirements:</label><br>
           <textarea class=fillTextArea name="requirements" id="requirements" onfocus="BackgroundSetColor('requirements','yellow')" onblur="BackgroundSetColor('requirements','#D3D3D3')"></textarea><br>
           <label class="fillLabel" for="address">Address:</label><br>
+<<<<<<< HEAD
           <input class="fillform" type="text" id="address" name="address" onfocus="BackgroundSetColor('address','yellow')" onblur="BackgroundSetColor('address','#D3D3D3')"><br>
           <label class="fillLabel" for="salary">Salary:</label><br>
           <input class="fillform" type="text" id="salary" name="salary" onfocus="BackgroundSetColor('salary','yellow')" onblur="BackgroundSetColor('salary','#D3D3D3')"><br>
           <label class="fillLabel" for="contacts">Contact number/email:</label><br>
           <input class="fillform" type="text" id="contacts" name="contacts" onfocus="BackgroundSetColor('contacts','yellow')" onblur="BackgroundSetColor('contacts','#D3D3D3')"> <br>
+=======
+          <input class="fillform" type="text" id="address" name="address" ><br>
+          <label class="fillLabel" for="salary">Salary:</label><br>
+          <input class="fillform" type="text" id="salary" name="salary" ><br>
+          <label class="fillLabel" for="contacts">Contact number/email:</label><br>
+          <input class="fillform" type="text" id="contacts" name="contacts" > <br>
+>>>>>>> 68f8d313f57eeb1501cb31afc8ec1df63909b10f
           <input class="fillbutton" type="submit" value="Add Advertisement"><br>
         </form> 
       </fieldset>
