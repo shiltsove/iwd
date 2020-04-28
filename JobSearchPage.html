@@ -4,6 +4,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
 <title>EYE Job Search Page</title>
+<script type="text/javascript">
+    function BackgroundSetColor(obj,color)
+	{
+		document.getElementById(obj).style.backgroundColor = color;
+	}
+
+    function InputCheck()
+    {
+        jobTitle_value = document.getElementById("jobTitle").value;
+        specialization_value = document.getElementById("specialization").value;
+        location_value = document.getElementById("location").value;
+    
+        alphabetpattern = /^[a-zA-Z]+[a-zA-Z ]+$/
+  
+
+        if (jobTitle_value.length == 0)
+            {
+            alert("Please fill Job Title form");
+            document.getElementById("jobTitle").select();
+            return false;
+            }
+        else if (specialization_value.length == 0)
+            {
+            alert("Please fill Specialization form");
+            document.getElementById("specialization").select();
+            return false;
+            }
+        else if (location_value.length == 0)
+            {
+            alert("Please fill Location form");
+            document.getElementById("location").select();
+            return false;
+            }
+
+        
+        if ( !alphabetpattern.test(jobTitle_value))
+            {
+        alert("Job Title is not in right format!");
+        document.getElementById("jobTitle").select();
+        return false;
+            }
+    } 
+
+</script>
 </head>
 <body>
 
@@ -38,18 +82,30 @@
    <br>
      <fieldset>
         <legend><h1>Specify your requirements</h1></legend>
-            <div class="col-4">
-            <label class="fillLabel" for="jobTitle">Job Title:</label><br>
-            <input class="fillform" type="text" id="jobTitle" name="jobTitle" ><br>
-            </div>
-            <div class="col-4">
-            <label class="fillLabel" for="specialization">Specialization:</label><br>
-            <input class="fillform" type="text" id="specialization" name="specialization" ><br>
-            </div>
-            <div class="col-4">
-            <label class="fillLabel" for="location">Location:</label><br>
-            <input class="fillform" type="text" id="location" name="location" ><br>
-            </div>
+            <form onsubmit = "return InputCheck()"></form>
+                <div class="col-4">
+                <label class="fillLabel" for="jobTitle">Job Title:</label><br>
+                <input class="fillform" type="text" id="jobTitle" name="jobTitle" onfocus="BackgroundSetColor('jobTitle','yellow')" onblur="BackgroundSetColor('jobTitle','#D3D3D3')"><br>
+                </div>
+                <div class="col-4">
+                <label class="fillLabel" for="specialization">Specialization:</label><br>
+                <input class="fillform" type="text" id="specialization" name="specialization" onfocus="BackgroundSetColor('specialization','yellow')" onblur="BackgroundSetColor('specialization','#D3D3D3')"><br>
+                </div>
+                <div class="col-4">
+                <label class="fillLabel" for="location">Location:</label><br>
+                <input class="fillform" type="text" id="location" name="location" onfocus="BackgroundSetColor('location','yellow')" onblur="BackgroundSetColor('location','#D3D3D3')"><br>
+                </div>
+                    
+                <div class="col-4">
+                    <!-- placeholder to center button -->
+                </div>
+                <div class="col-4">
+                    <input class="fillbutton" type="submit" value="Start search"><br>
+                </div>
+                <div class="col-4">
+                    <!-- placeholder to center button -->
+                </div>
+            </form>
     </fieldset>
   </div>
     
@@ -63,7 +119,7 @@
     </div>
     <div class="col-6">
     <h1>Additional information</h1>
-         <fieldset>
+        <fieldset>
         <legend><h1>Job details</h1></legend>
             <fieldset>
                 <legend>Job Title:</legend>

@@ -4,6 +4,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
 <title>EYE Employer Sign In Page</title>
+<script type="text/javascript">
+
+function BackgroundSetColor(obj,color)
+	{
+		document.getElementById(obj).style.backgroundColor = color;
+	}
+
+  function InputCheck()
+  {
+    signInLogin_value = document.getElementById("signInLogin").value;
+    signInPassword_value = document.getElementById("signInPassword").value;
+
+    if (signInLogin_value.length == 0)
+    {
+      alert("Please fill Login form");
+      document.getElementById("signInLogin").select();
+      return false;
+    } 
+    else if (signInPassword_value.length == 0)
+		{
+      alert("Please fill Password form");
+		  document.getElementById("signInPassword").select();
+		  return false;
+		}
+  } 
+</script>
 </head>
 <body>
 
@@ -36,11 +62,11 @@
   <div class="col-8">
     <h1>Welcome back, it is always a pleasure to meet you again.</h1>
     <h1>Please, sign using your email or login and password.</h1>
-    <form action="#">
+    <form onsubmit = "return InputCheck()">
         <label class="fillLabel" for="signInLogin">Login/Email:</label><br>
-        <input class="fillform" type="text" id="signInLogin" name="signInLogin" ><br>
+        <input class="fillform" type="text" id="signInLogin" name="signInLogin" onfocus="BackgroundSetColor('signInLogin','yellow')" onblur="BackgroundSetColor('signInLogin','#D3D3D3')"><br>
         <label class="fillLabel" for="signInPassword">Password:</label><br>
-        <input class="fillform" type="password" id="signInPassword" name="signInPassword"><br>
+        <input class="fillform" type="password" id="signInPassword" name="signInPassword" onfocus="BackgroundSetColor('signInPassword','yellow')" onblur="BackgroundSetColor('signInPassword','#D3D3D3')"><br>
         <input class="fillbutton" type="submit" value="Sing In"><br>
     </form> 
    <p>If you troubles with signing in, please: <a class=inTextUrl href="ContactsPage.html">contact us</a> </p>

@@ -4,6 +4,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
 <title>Feedback Page</title>
+<script type="text/javascript">
+
+function BackgroundSetColor(obj,color)
+	{
+		document.getElementById(obj).style.backgroundColor = color;
+	}
+
+  function InputCheck()
+  {
+      loginoremail_value = document.getElementById("loginoremail").value;
+      feedback_value = document.getElementById("feedback").value;
+
+      emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]+@[a-zA-Z\d]+\.(my|com|net)$/;
+
+
+      if (loginoremail_value.length == 0)
+          {
+          alert("Please fill Contacts form");
+          document.getElementById("loginoremail").select();
+          return false;
+          }
+      else if (feedback_value.length == 0)
+          {
+          alert("Please fill Feedback form");
+          document.getElementById("feedback").select();
+          return false;
+          }
+
+      
+      if ( !emailpattern.test(email_value))
+          {
+          alert("Email is not in right format!");
+          document.getElementById("email").select();
+          return false;
+          }
+  } 
+</script>
 </head>
 <body>
 
@@ -38,11 +75,11 @@
   </div>
   <div class="col-8" >
     <h1>Please write your comments and recommendations here. Your opinion is very important for us.</h1>
-    <form action="#">
+    <form onsubmit = "return InputCheck()">
         <label class="fillLabel" for="loginoremail">Login/Email:</label><br>
-        <input class="fillform" type="text" id="loginoremail" name="loginoremail" ><br>
+        <input class="fillform" type="text" id="loginoremail" name="loginoremail" onfocus="BackgroundSetColor('loginoremail','yellow')" onblur="BackgroundSetColor('loginoremail','#D3D3D3')"><br>
         <label class="fillLabel" for="feedback">Fill that form to leave your message:</label><br>
-        <textarea name="message" style="width:60%; height:400px;"></textarea>
+        <textarea class=fillTextArea name="feedback" id="feedback" onfocus="BackgroundSetColor('feedback','yellow')" onblur="BackgroundSetColor('feedback','#D3D3D3')"></textarea><br>
 <br><br>
         <input class="fillbutton" type="submit" value="Send"><br>
         <br><br>

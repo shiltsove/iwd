@@ -4,6 +4,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="application_style.css">
 <title>EYE Contacts Page</title>
+<script type="text/javascript">
+  function BackgroundSetColor(obj,color)
+  {
+    document.getElementById(obj).style.backgroundColor = color;
+  }
+
+  function InputCheck()
+  {
+      subject_value = document.getElementById("subject").value;
+      name_value = document.getElementById("name").value;
+      email_value = document.getElementById("email").value;
+      message_value = document.getElementById("message").value;
+
+      emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]+@[a-zA-Z\d]+\.(my|com|net)$/;
+
+
+      if (subject_value.length == 0)
+          {
+          alert("Please fill Subject form");
+          document.getElementById("subject").select();
+          return false;
+          }
+      else if (name_value.length == 0)
+          {
+          alert("Please fill Name form");
+          document.getElementById("name").select();
+          return false;
+          }
+      else if (email_value.length == 0)
+          {
+          alert("Please fill Email form");
+          document.getElementById("email").select();
+          return false;
+          }
+      else if (message_value.length == 0)
+          {
+          alert("Please fill Message form");
+          document.getElementById("message").select();
+          return false;
+          }
+
+      
+      if ( !emailpattern.test(email_value))
+          {
+          alert("Email is not in right format!");
+          document.getElementById("email").select();
+          return false;
+          }
+  } 
+
+</script>
 </head>
 <body>
 
@@ -36,15 +87,15 @@
     <fieldset>
         <legend><h1>Contact us through site</h1></legend>
         <h3>Please, fill in your message and contact details.</h3>
-        <form action="#">
-            <label class="fillLabel" for="companyName">Subject:</label><br>
-            <input class="fillform" type="text" id="companyName" name="companyNamen"><br>
-            <label class="fillLabel" for="responsibilities">Name:</label><br>
-            <input class="fillform" type="text" id="responsibilities" name="responsibilities" ><br>
-            <label class="fillLabel" for="requirements">Email:</label><br>
-            <input class="fillform" type="text" id="requirements" name="requirements" ><br>
-            <label class="fillLabel" for="address">Message:</label><br>
-            <textarea name="message" style="width:100%; height:100px;"></textarea>
+        <form onsubmit = "return InputCheck()">
+            <label class="fillLabel" for="subject">Subject:</label><br>
+            <input class="fillform" type="text" id="subject" name="subject" onfocus="BackgroundSetColor('subject','yellow')" onblur="BackgroundSetColor('subject','#D3D3D3')"><br>
+            <label class="fillLabel" for="name">Name:</label><br>
+            <input class="fillform" type="text" id="name" name="name" onfocus="BackgroundSetColor('name','yellow')" onblur="BackgroundSetColor('name','#D3D3D3')"><br>
+            <label class="fillLabel" for="email">Email:</label><br>
+            <input class="fillform" type="text" id="email" name="email" onfocus="BackgroundSetColor('email','yellow')" onblur="BackgroundSetColor('email','#D3D3D3')"><br>
+            <label class="fillLabel" for="message">Message:</label><br>
+            <textarea class=fillTextArea name="message" id="message" onfocus="BackgroundSetColor('message','yellow')" onblur="BackgroundSetColor('message','#D3D3D3')"></textarea><br>
             <input class="fillbutton" type="submit" value="Send message"><br>
         </form> 
     </fieldset>
