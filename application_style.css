@@ -147,7 +147,8 @@ button.active {
     height: 40px;
     background-color: rgb(97, 97, 97);
     color: white;
-	font-size:22px;
+    font-size:22px;
+    cursor: pointer;
 }
 .fillTextArea{
   width: 85%;
@@ -160,7 +161,8 @@ button.active {
   height: 40px;
   background-color: rgb(79, 89, 95);
   color: white;
-font-size:22px;
+  font-size:22px;
+  cursor: pointer;
 }
 
 .selectform {
@@ -170,7 +172,10 @@ font-size:22px;
     color: white;
 }
 
-
+.inTextUrl{
+  font-size:26px; 
+  color: #3e8e41;
+}
 
 img {
  max-width:100%;
