@@ -18,6 +18,7 @@
     
         alphabetpattern = /^[a-zA-Z]+[a-zA-Z ]+$/
   
+        // check that all forms are filled.
 
         if (jobTitle_value.length == 0)
             {
@@ -38,12 +39,13 @@
             return false;
             }
 
+        //check that forms filled in right format
         
         if ( !alphabetpattern.test(jobTitle_value))
             {
-        alert("Job Title is not in right format!");
-        document.getElementById("jobTitle").select();
-        return false;
+            alert("Job Title is not in right format!");
+            document.getElementById("jobTitle").select();
+            return false;
             }
     } 
 

@@ -16,6 +16,10 @@ function BackgroundSetColor(obj,color)
     signInLogin_value = document.getElementById("signInLogin").value;
     signInPassword_value = document.getElementById("signInPassword").value;
 
+    alphanumeric_six = /^[a-zA-Z\d]{6,}$/;
+
+    // check that all forms are filled.
+
     if (signInLogin_value.length == 0)
     {
       alert("Please fill Login form");
@@ -28,6 +32,22 @@ function BackgroundSetColor(obj,color)
 		  document.getElementById("signInPassword").select();
 		  return false;
 		}
+
+    //check that forms filled in right format
+
+    if ( !alphanumeric_six.test(signInLogin_value))
+		{
+      alert("Login must consist of at least 6 alphanumeric characters!");
+      document.getElementById("signInLogin").select();
+      return false;
+		}
+    else if ( !alphanumeric_six.test(signInPassword_value))
+		{
+      alert("Password must consist of at least 6 alphanumeric characters!");
+      document.getElementById("signInPassword").select();
+      return false;
+		}
+
   } 
 </script>
 </head>

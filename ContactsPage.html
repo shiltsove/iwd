@@ -19,6 +19,7 @@
 
       emailpattern = /^[a-zA-Z\d][a-zA-Z\d._-]+@[a-zA-Z\d]+\.(my|com|net)$/;
 
+      // check that all forms are filled.
 
       if (subject_value.length == 0)
           {
@@ -45,7 +46,8 @@
           return false;
           }
 
-      
+      //check that forms filled in right format
+
       if ( !emailpattern.test(email_value))
           {
           alert("Email is not in right format!");
